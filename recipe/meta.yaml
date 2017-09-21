@@ -1,4 +1,4 @@
-{% set version = "0.20.6" %}
+{% set version = "0.20.7" %}
 
 package:
   name: openpiv
@@ -7,11 +7,10 @@ package:
 source:
   fn: openpiv-{{ version }}.tar.gz
   url: https://github.com/OpenPIV/openpiv-python/archive/{{ version }}.tar.gz
-  sha256: e86e72f1a3d92772ec98d2f5c45204fef6b6e753027b733715d312a12e3fe84d
+  sha256: afa121ac16cf67b65220d65945b03f587d7deee837a4c88d930563b4bb3c3b7b
   
 build:
-  number: 0
-  skip: true  # [py3k]
+  number: 1
   script: 
     - python setup.py install --single-version-externally-managed --record record.txt
 
@@ -38,7 +37,7 @@ test:
 
 about:
   home: https://github.com/openpiv/openpiv-python
-  license: GPL 3
+  license: GPL v3
   license_file: LICENSE.txt
   summary: "Open Source Particle Image Velocimetry"
   doc_url: http://openpiv.readthedocs.io/
