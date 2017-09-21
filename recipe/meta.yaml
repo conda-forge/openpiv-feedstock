@@ -1,4 +1,4 @@
-{% set version = "0.20.5" %}
+{% set version = "0.20.8" %}
 
 package:
   name: openpiv
@@ -7,11 +7,10 @@ package:
 source:
   fn: openpiv-{{ version }}.tar.gz
   url: https://github.com/OpenPIV/openpiv-python/archive/{{ version }}.tar.gz
-  sha256: 2cee1434f536e51d0e3ad48579ecb6d3cb9bc26916841fa02310b3be83857026
+  sha256: b649b572c7e39f8536ea808a28db260de9c293d1e25d1f91abd557fabdb8e05d
   
 build:
-  number: 1
-  skip: true  # [py3k]
+  number: 0
   script: 
     - python setup.py install --single-version-externally-managed --record record.txt
 
