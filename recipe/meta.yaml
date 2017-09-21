@@ -19,13 +19,15 @@ requirements:
     - toolchain
     - python
     - setuptools
-    - numpy x.x
+    - numpy 1.8.*  # [not (win and (py35 or py36))]
+    - numpy 1.9.*  # [win and (py35 or py36)]
     - cython
 
   run:
     - python
     - setuptools
-    - numpy x.x
+    - numpy >=1.8  # [not (win and (py35 or py36))]
+    - numpy >=1.9  # [win and (py35 or py36)]
     - scipy
     - cython
     - progressbar
