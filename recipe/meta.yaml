@@ -10,7 +10,7 @@ source:
   sha256: b649b572c7e39f8536ea808a28db260de9c293d1e25d1f91abd557fabdb8e05d
   
 build:
-  number: 0
+  number: 1
   script: 
     - python setup.py install --single-version-externally-managed --record record.txt
 
@@ -25,9 +25,9 @@ requirements:
 
   run:
     - python
-    - setuptools
     - numpy >=1.8  # [not (win and (py35 or py36))]
     - numpy >=1.9  # [win and (py35 or py36)]
+    - setuptools
     - scipy
     - cython 
     - progressbar2 >= 3.8.1
