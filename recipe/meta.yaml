@@ -19,19 +19,18 @@ requirements:
     - toolchain
     - python
     - setuptools
-    - numpy 1.8.*  # [not (win and (py35 or py36))]
-    - numpy 1.9.*  # [win and (py35 or py36)]
+    - numpy >=1.7
+    - scipy >=0.12
     - cython
 
   run:
     - python
-    - numpy 1.8.*  # [not (win and (py35 or py36))]
-    - numpy 1.9.*  # [win and (py35 or py36)]
     - setuptools
-    - scipy
+    - numpy >=1.7
+    - scipy >=0.12
     - cython 
-    - progressbar2 3.8.*
-    - scikit-image 0.13.*
+    - progressbar2
+    - scikit-image
 
 test:
   imports:
