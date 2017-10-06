@@ -1,4 +1,4 @@
-{% set version = "0.20.6" %}
+{% set version = "0.20.8" %}
 
 package:
   name: openpiv
@@ -7,11 +7,10 @@ package:
 source:
   fn: openpiv-{{ version }}.tar.gz
   url: https://github.com/OpenPIV/openpiv-python/archive/{{ version }}.tar.gz
-  sha256: e86e72f1a3d92772ec98d2f5c45204fef6b6e753027b733715d312a12e3fe84d
+  sha256: b649b572c7e39f8536ea808a28db260de9c293d1e25d1f91abd557fabdb8e05d
   
 build:
-  number: 0
-  skip: true  # [py3k]
+  number: 1
   script: 
     - python setup.py install --single-version-externally-managed --record record.txt
 
@@ -20,16 +19,17 @@ requirements:
     - toolchain
     - python
     - setuptools
-    - numpy x.x
+    - numpy >=1.7
+    - scipy >=0.12
     - cython
 
   run:
     - python
     - setuptools
-    - numpy x.x
-    - scipy
-    - cython
-    - progressbar
+    - numpy >=1.7
+    - scipy >=0.12
+    - cython 
+    - progressbar2
     - scikit-image
 
 test:
