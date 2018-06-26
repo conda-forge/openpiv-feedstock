@@ -8,27 +8,28 @@ source:
   fn: openpiv-{{ version }}.tar.gz
   url: https://github.com/OpenPIV/openpiv-python/archive/{{ version }}.tar.gz
   sha256: cbee966f9d5479db24d32c7844e8be6fd1e8033cb51e83485c84ce1874bfd488
-  
+
 build:
   number: 0
-  script: 
+  script:
     - python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('c') }}
+  host:
     - python
     - setuptools
-    - numpy >=1.7
+    - numpy
     - scipy >=0.12
     - cython
 
   run:
     - python
     - setuptools
-    - numpy >=1.7
+    - {{ pin_compatible('numpy') }}
     - scipy >=0.12
-    - cython 
+    - cython
     - progressbar2
     - scikit-image
 
