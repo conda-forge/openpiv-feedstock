@@ -32,6 +32,7 @@ requirements:
     - cython
     - progressbar2
     - scikit-image
+    - future
 
 test:
   imports:
