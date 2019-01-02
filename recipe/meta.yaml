@@ -10,9 +10,8 @@ source:
   sha256: 09747e5a49bede8547c0b8a2b6db8ac96afdaad9f9528f358349f47aeca6b7fd
   
 build:
-  number: 0
-  script: 
-    - python setup.py install --single-version-externally-managed --record record.txt
+  number: 1000
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   build:
