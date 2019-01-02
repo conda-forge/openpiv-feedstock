@@ -10,26 +10,18 @@ source:
   sha256: 09747e5a49bede8547c0b8a2b6db8ac96afdaad9f9528f358349f47aeca6b7fd
   
 build:
-  number: 1001
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  number: 1002
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vv"
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
     - pip
-    - python
-    - setuptools
     - numpy
-    - scipy >=0.12
     - cython
 
   run:
-    - python
-    - setuptools
-    - {{ pin_compatible('numpy') }}
-    - scipy >=0.12
-    - cython
     - progressbar2
     - scikit-image
     - future
