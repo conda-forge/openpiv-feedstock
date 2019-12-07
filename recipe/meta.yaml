@@ -23,6 +23,10 @@ requirements:
     - requests
 
   run:
+    - python
+    - setuptools
+    - cython
+    - {{ pin_compatible('numpy') }}
     - progressbar2
     - scikit-image
     - future
