@@ -5,4 +5,6 @@ channel_sources:
 channel_targets:
 - conda-forge main
 numpy:
-- '1.14'
+- '1.16'
+target_platform:
+- win-64
