@@ -10,7 +10,7 @@ source:
   sha256: 984b37223e5f325201eb509e0900789f7fc80d8f4f0e90ce0cc62909ff885d31
 
 build:
-  number: 1
+  number: 2
   script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vv
 
 requirements:
@@ -27,7 +27,6 @@ requirements:
     - setuptools
     - cython
     - {{ pin_compatible('numpy') }}
-    - progressbar2
     - scikit-image
     - future
 
