@@ -3,13 +3,13 @@ About openpiv
 
 Home: https://github.com/openpiv/openpiv-python
 
-Package license: GPL 3
+Package license: GPL-3.0-only
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openpiv-feedstock/blob/master/LICENSE.txt)
 
 Summary: Open Source Particle Image Velocimetry
 
-
+Documentation: http://openpiv.readthedocs.io/
 
 Current build status
 ====================
