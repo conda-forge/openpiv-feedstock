@@ -7,10 +7,10 @@ package:
 source:
   fn: openpiv-{{ version }}.tar.gz
   url: https://github.com/OpenPIV/openpiv-python/archive/{{ version }}.tar.gz
-  sha256: 984b37223e5f325201eb509e0900789f7fc80d8f4f0e90ce0cc62909ff885d31
+  sha256: d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed
 
 build:
-  number: 2
+  number: 3
   script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vv
 
 requirements:
