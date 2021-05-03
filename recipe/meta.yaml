@@ -10,16 +10,16 @@ source:
   sha256: ef1eec8060f1d84196e6bd55f15886fa31f453d408031dbcf097346a9a761c4b
 
 build:
-  skip: true  # [py<37]
+  noarch: python
   number: 2
-  script: python -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - requests
   run:
-    - python
+    - python >=3.7
     - setuptools
     - {{ pin_compatible('numpy') }}
     - scikit-image
