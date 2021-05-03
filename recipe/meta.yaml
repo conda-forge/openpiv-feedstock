@@ -28,7 +28,6 @@ requirements:
     - matplotlib-base
     - scipy
     - natsort
-    - future
 
 test:
   imports:
