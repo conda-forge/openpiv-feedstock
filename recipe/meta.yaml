@@ -12,17 +12,22 @@ source:
 build:
   noarch: python
   number: 2
-  script: {{ PYTHON }} -m pip install . -vv
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
     - python >=3.7
-    - requests
+    - pip
+    - setuptools
+    - numpy
   run:
     - python >=3.7
-    - setuptools
     - {{ pin_compatible('numpy') }}
     - scikit-image
+    - imageio
+    - matplotlib-base
+    - scipy
+    - natsort
     - future
 
 test:
