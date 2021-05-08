@@ -10,20 +10,24 @@ source:
   sha256: ef1eec8060f1d84196e6bd55f15886fa31f453d408031dbcf097346a9a761c4b
 
 build:
-  number: 1
-  script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vv
+  noarch: python
+  number: 2
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
+    - python >=3.7
     - pip
-    - requests
-
-  run:
-    - python
     - setuptools
+    - numpy
+  run:
+    - python >=3.7
     - {{ pin_compatible('numpy') }}
     - scikit-image
-    - future
+    - imageio
+    - matplotlib-base
+    - scipy
+    - natsort
 
 test:
   imports:
