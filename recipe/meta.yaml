@@ -1,4 +1,4 @@
-{% set version = "0.23.8" %}
+{% set version = "0.23.9" %}
 
 package:
   name: openpiv
