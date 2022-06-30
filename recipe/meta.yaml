@@ -1,4 +1,4 @@
-{% set version = "0.24.0" %}
+{% set version = "0.24.1" %}
 
 package:
   name: openpiv
@@ -7,7 +7,7 @@ package:
 source:
   fn: openpiv-{{ version }}.tar.gz
   url: https://github.com/OpenPIV/openpiv-python/archive/v{{ version }}.tar.gz
-  sha256: 5c1b0edf75ae7f9b28fff42a58db1fce847e5b0b5356981dffd1ccfac75b1c19
+  sha256: c635b93a6dd8dc2a2b5eaef06f491723a185f260cc18c32f5797f64d7b8617cd
 
 build:
   noarch: python
