@@ -11,23 +11,22 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - python >=3.7
     - pip
-    - setuptools
-    - numpy
   run:
     - python >=3.7
-    - {{ pin_compatible('numpy') }}
+    - numpy
     - scikit-image
     - imageio
     - matplotlib-base
     - scipy
     - natsort
+    - tqdm
 
 test:
   imports:
