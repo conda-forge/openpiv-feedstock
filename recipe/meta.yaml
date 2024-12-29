@@ -11,15 +11,15 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - numpy
     - scikit-image
     - imageio
@@ -33,6 +33,7 @@ test:
     - openpiv
   requires:
     - pytest
+    - python {{ python_min }}
   commands:
     - pytest -v --pyargs openpiv
 
