@@ -8,8 +8,16 @@ on:
 
 jobs:
   build:
-    name: Disabled build
-    runs-on: ubuntu-slim
-    if: false
+    name: Build conda package
+    runs-on: ubuntu-latest
     steps:
-    - run: exit 0
+      - uses: actions/checkout@v3
+      
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: '3.11'
+          auto-activate-base: true
+      
+      - name: Build conda package
+        run: conda install --yes conda-build && conda build recipe/
+        shell: bash -l {0}
