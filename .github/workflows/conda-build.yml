@@ -19,5 +19,5 @@ jobs:
           auto-activate-base: true
       
       - name: Build conda package
-        run: conda build recipe/
+        run: conda install --yes conda-build && conda build recipe/
         shell: bash -l {0}
