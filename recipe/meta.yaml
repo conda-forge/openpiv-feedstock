@@ -1,5 +1,4 @@
 {% set version = "0.26.1" %}
-{% set python_min = "3.10" %}
 
 package:
   name: openpiv
@@ -17,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - pip
     - poetry-core
   run:
-    - python >={{ python_min }}
+    - python
     - numpy
     - scikit-image
     - imageio
@@ -35,7 +34,7 @@ test:
     - openpiv
   requires:
     - pytest
-    - python {{ python_min }}
+    - python
   commands:
     - pytest -v --pyargs openpiv
 
