@@ -1,4 +1,5 @@
-{% set version = "0.26.0" %}
+{% set version = "0.26.1" %}
+{% set python_min = "3.10" %}
 
 package:
   name: openpiv
@@ -7,7 +8,7 @@ package:
 source:
   fn: openpiv-{{ version }}.tar.gz
   url: https://github.com/OpenPIV/openpiv-python/archive/v{{ version }}.tar.gz
-  sha256: 5f29a46bc0631f551ef941cab86c8af092def8759bfc03169e327baeccdbe3ec
+  sha256: 2d3cffcd730bcab624e139bca158a6e8ce3da4c3b59e9666f0435f048a5cf539
 
 build:
   noarch: python
@@ -16,10 +17,11 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
+    - poetry-core
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - numpy
     - scikit-image
     - imageio
@@ -33,6 +35,7 @@ test:
     - openpiv
   requires:
     - pytest
+    - python {{ python_min }}
   commands:
     - pytest -v --pyargs openpiv
 
