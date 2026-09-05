@@ -1,5 +1,4 @@
 {% set version = "0.26.1" %}
-{% set python_min = "3.10" %}
 
 package:
   name: openpiv
@@ -13,15 +12,15 @@ source:
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - pip
     - poetry-core
   run:
-    - python >={{ python_min }}
+    - python
     - numpy
     - scikit-image
     - imageio
@@ -35,7 +34,7 @@ test:
     - openpiv
   requires:
     - pytest
-    - python {{ python_min }}
+    - python
   commands:
     - pytest -v --pyargs openpiv
 
